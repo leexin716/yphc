@@ -1,0 +1,11 @@
+<!--pages/funpartylist/funpartylist.wxml-->
+<view wx:for="{{carList}}" wx:key="index">
+  <view class='timer'>{{item.pushTime}}</view>
+  <navigator url='/pages/webview/webview?id={{index}}&&page=0' hover-class='none'>
+    <view class='content'>
+      <view class='titile'>{{item.title}}</view>
+      <view class='middle'>{{item.synopsis}}</view>
+      <view class='lookmore'><view>查看详情</view><view>></view></view>
+    </view>
+  </navigator>
+</view>

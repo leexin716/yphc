@@ -1,0 +1,103 @@
+<!--pages/home/home.wxml-->
+<view class='{{tabId == -1?"":"overflower"}}'>
+  <!-- banner -->
+  <swiper indicator-dots="true" indicator-active-color="#fff" autoplay="true" interval="5000" duration="500" style='height:350rpx'>
+    <block wx:for="{{imgBanner}}" wx:key="index">
+      <!-- <navigator url='/pages/webview/webview?url={{item.url}}&&page=1&&title={{item.title}}'> -->
+      <swiper-item>
+        <image src="{{item.preImg}}" class="slide-image" style='width:100%;height:100%' data-islogin='4' data-url="{{item.url}}" data-title="{{item.title}}" data-page="1" bindtap='banner_login' />
+      </swiper-item>
+      <!-- </navigator> -->
+    </block>
+  </swiper>
+  <!-- 品牌推荐 -->
+  <view class='brandContent'>
+    <view class='brand'>
+      <view class='brandTop'>
+        <view class="brandTopInit {{currentTab==index ? 'active':''}}" wx:for='{{account}}' wx:key='index' data-current='{{index}}' bindtap='TipBrand'>
+          {{item}}
+          <view class='triangle' wx:if="{{currentTab == index}}"></view>
+        </view>
+      </view>
+      <view class='brandBtm'>
+        <view class='brandBtmIcon' wx:for="{{logo_tabs}}" wx:key="index">
+          <image src="{{item.logo}}" style="width:60rpx;height:60rpx" />
+          <view>{{item.chineseName}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 为您推荐 -->
+    <view class='groomContent'>
+      <view class='groomTitle'>为您推荐</view>
+      <scroll-view scroll-x="true">
+        <view class='groomList'>
+          <view class='groomListItem' wx:for="{{GroomList}}" wx:key="index" data-id='{{item.id}}' data-islogin="2" bindtap='prleft_login'>
+            <image src="{{item.imgUrl}}" style="width:220rpx;height:160rpx" />
+            <view class='brandType fontSize14'>{{item.brand}}{{item.typeClass}}</view>
+            <view class='brandMouth fontSize12'>月供{{item.monthlyPaymentAmount}}元</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 选项卡 -->
+  <view class='tabtop {{isFixed?"fixed":""}}'>
+    <!-- 导航栏 -->
+    <view class='tabTag fontSize12'>
+      <!-- <view class='tabflex {{tabId == index?"green":""}}' wx:for="{{tabTagList}}" wx:key="index" data-id="{{index}}" bindtap='filterFn'>
+        {{item}}
+        <view class="iconfont icon-jiantou-xia-cuxiantiao {{tabId == index?'tranfrom':''}}" data-id="{{index}}"></view>
+      </view> -->
+      <view class='tabflex {{tabId == 0?"green":""}} {{dialogId0 != 0 && dialogId0 != -1?"green":""}}' data-id="0" bindtap='filterFn'><!-- 默认 -->
+        <view data-id="0">{{defaultTitle}}</view>
+        <view class="iconfont icon-jiantou-xia-cuxiantiao {{tabId == 0?'tranfrom':''}}" data-id="0"></view>
+      </view>
+      <view class='tabflex {{tabId == 1?"green":""}} {{dialogId1 != 0 && dialogId1 != -1?"green":""}}' data-id="1" bindtap='filterFn'><!-- 品牌 -->
+        <view data-id="1">{{brandTitle}}</view>
+        <view class="iconfont icon-jiantou-xia-cuxiantiao {{tabId == 1?'tranfrom':''}}" data-id="1"></view>
+      </view>
+      <view class='tabflex {{tabId == 2?"green":""}} {{dialogId2 != 0 && dialogId2 != -1?"green":""}}' data-id="2" bindtap='filterFn'><!-- 月供 -->
+        <view data-id="2">{{monsupplyTitle}}</view>
+        <view class="iconfont icon-jiantou-xia-cuxiantiao {{tabId == 2?'tranfrom':''}}" data-id="2"></view>
+      </view>
+      <view class='tabflex {{tabId == 3?"green":""}} {{dialogId3 != 0 && dialogId3 != -1?"green":""}}' data-id="3" bindtap='filterFn'><!-- 筛选 -->
+        <view data-id="3">{{filterTitle}}</view>
+        <view class="iconfont icon-jiantou-xia-cuxiantiao {{tabId == 3?'tranfrom':''}}" data-id="3"></view>
+      </view>
+    </view>
+    <!-- 选项列表 -->
+    <view class='dialog' wx:if='{{dialogShow}}' bindtap='closeDialog'>
+      <view class='dialogContent'>
+        <!-- 默认排序列表选择 -->
+        <view class='dialogContenter {{dialogId0 == index?"green":""}}' wx:if="{{tabId == 0}}" wx:for='{{defaulter}}' wx:key='index' data-id="{{index}}" data-name="{{item}}" bindtap='tapDefault'>
+          {{item}}<view class='iconfont icon-check' wx:if="{{dialogId0 == index}}"></view>
+        </view>
+        <!-- 品牌列表选择 -->
+        <view class='dialogContenter {{dialogId1 == index?"green":""}}' wx:if="{{tabId == 1}}" wx:for='{{brander}}' wx:key='index' data-id="{{index}}" data-name="{{item}}" bindtap='tapBrand'>
+          {{item}}<view class='iconfont icon-check' wx:if="{{dialogId1 == index}}"></view>
+        </view>
+        <!-- 月供列表选择 -->
+        <view class='dialogContenter {{dialogId2 == index?"green":""}}' wx:if="{{tabId == 2}}" wx:for='{{monsupply}}' wx:key='index' data-id="{{index}}" data-name="{{item}}" bindtap='tapMonsupply'>
+          {{item}}<view class='iconfont icon-check' wx:if="{{dialogId2 == index}}"></view>
+        </view>
+        <!-- 筛选列表选择 -->
+        <view class='dialogContenter {{dialogId3 == index?"green":""}}' wx:if="{{tabId == 3}}" wx:for='{{filter}}' wx:key='index' data-id="{{index}}" data-name="{{item}}" bindtap='tapFilter'>
+          {{item}}<view class='iconfont icon-check' wx:if="{{dialogId3 == index}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='carList'>
+  <scroll-view scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="searchScrollLower">
+    <view class='carLisTable' wx:for="{{carTableData}}" wx:key="index">
+      <view class='carLisTableLeft'><image src='{{item.imgUrl}}' style='width:180rpx; height:120rpx'></image></view>
+      <view class='carLisTableRight'>
+        <view>{{item.brand}} {{item.typeClass}}</view>
+        <view>市场零售价：{{item.guidePrice}}万</view>
+        <view>月供{{item.monthlyPaymentAmount}}元</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+  <view style='width:100%;height:1500px'></view>
+</view>

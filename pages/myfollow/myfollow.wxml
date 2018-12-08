@@ -1,0 +1,21 @@
+<!--pages/myfollow/myfollow.wxml-->
+<view class='content'>
+  <block wx:for="{{favlist}}" wx:key="index">
+    <navigator url='/pages/carsdetails/carsdetails?id={{item.id}}'>
+      <view class='contenter'>
+        <view class='cnt_left'><image src="{{item.imgUrl}}" style='width:260rpx;height:170rpx'></image></view>
+        <view class='cnt_right'>
+          <view>{{item.brand}}</view>
+          <view>{{item.name}}</view>
+          <view>厂商指导价 {{item.guidePrice}}万</view>
+          <view class='favor'><image src="../../imgs/icon_fav.png" style='width:30rpx;height:30rpx'></image></view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <view class='nodata' wx:if="{{nodata}}">
+    <image src="../../imgs/noneData.png" style='width:150rpx;height:150rpx'></image>
+    <view class='nocarFav'>还没有关注的爱车</view>
+    <view class='goshoper' bindtap='gohappy'>去逛逛</view>
+  </view>
+</view>

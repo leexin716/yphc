@@ -1,0 +1,15 @@
+<!--pages/shoplist/shoplist.wxml-->
+<view class='allshop'>
+  <block wx:for="{{shoplist}}" wx:key="index">
+    <view class='shop_item'>
+      <view class='item_left'>
+        <view>{{item.name}}</view>
+        <view>{{item.address}}</view>
+        <view data-phone='{{item.telphone}}' bindtap='getPhone'><image src="../../imgs/phone_shop.png" style='width:35rpx;height:35rpx;float:left;margin:5rpx 5rpx 0 0'></image>{{item.telphone}}</view>
+      </view>
+      <view class='item_right' data-lat="{{item.coordY}}" data-lng="{{item.coordX}}" data-name="{{item.name}}" data-address="{{item.address}}" bindtap='getShopMap'>
+        <image src="../../imgs/location.png" style='width:35rpx;height:45rpx'></image>
+      </view>
+    </view>
+  </block>
+</view>

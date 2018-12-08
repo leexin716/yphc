@@ -1,0 +1,20 @@
+<!--pages/login/login.wxml-->
+<view style='padding-top:20rpx'>
+  <view class='content'>
+      <view class='phonecl'>
+        <view>手机号</view>
+        <view><input type='number' placeholder='手机号码' bindinput='phone' maxlength='11'></input></view>
+      </view>
+      <view class='coder'>
+        <view class='coderlt'>
+          <view>验证码</view>
+          <view class='editcode'><input type='number' placeholder='验证码' bindinput='code' maxlength='6'></input></view>
+        </view>
+        <view class='codeBtn'><button class='getcode' disabled='{{disabled}}' bindtap='getCode'>{{timer}}</button></view>
+      </view>
+      
+  </view>
+  <!-- <button bindtap='getCode'>验证码</button> -->
+  <!-- <button bindtap='Login'>登录</button> -->
+  <view style='width:85%;margin:40rpx auto'><view class='btn' bindtap='Login' hover-class='hoverbtn'>登录</view></view>
+</view>

@@ -1,0 +1,38 @@
+/* pages/newcarlist/newcarlist.wxss */
+.timer{
+  font-size: 26rpx;
+  color: #666;
+  padding: 20rpx 0;
+  text-align: center
+}
+.content{
+  width: 85%;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25rpx
+}
+.titile{
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold
+}
+.middle{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #eee
+}
+.middle view{
+  width: 80%;
+  font-size: 28rpx;
+  color: #666;
+  padding-left: 20rpx
+}
+.lookmore{
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #666;
+  padding: 15rpx 15rpx 0 15rpx
+}

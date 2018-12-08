@@ -1,0 +1,34 @@
+<!--pages/mycenter/mycenter.wxml-->
+<view class='header'>
+  <view class='headAcatar'><image src="../../imgs/avatar.png" style='width:100%;height:100%'></image></view>
+  <view class='head_right'>
+    <view wx:if="{{isLogin}}">
+      <view>{{hideMobile}}</view>
+      <view><text>新能源租售平台</text></view>
+    </view>
+    <view wx:else><navigator url='/pages/login/login?islogin=5'><view>请登录</view></navigator></view>
+  </view>
+</view>
+<!-- <view class="navigator-box">
+  <navigator url="{{isLogin?'/pages/authentication/authentication':'/pages/login/login?islogin=5'}}" class="navigator">
+      <view class="navigator-text">用户认证</view>
+      <view class="navigator-arrow"></view>
+  </navigator>
+</view> -->
+<view class="navigator-box" style='margin-top:20rpx'>
+  <block wx:for="{{pageone}}"  wx:key="index">
+    <navigator url="{{isLogin?('/pages/'+item.page+'/'+item.page):('/pages/login/login?islogin=5')}}" class="navigator">
+      <view class="navigator-text">{{item.name}}</view>
+      <view class="navigator-arrow"><text>{{item.cout}}</text></view>
+    </navigator>
+  </block>
+</view>
+<view class="navigator-box" style='margin-top:20rpx'>
+  <block wx:for="{{pagetwo}}"  wx:key="index">
+    <navigator url="{{isLogin?('/pages/'+item.page+'/'+item.page):('/pages/login/login?islogin=5')}}" class="navigator">
+      <view class="navigator-text">{{item.name}}</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+  </block>
+</view>
+<view class='btner' wx:if="{{isLogin}}"><button style='margin-top:30rpx' bindtap='goremove'>退出登录</button></view>

@@ -1,0 +1,4 @@
+<!--pages/carstorydetails/carstorydetails.wxml-->
+<!-- <web-view src="{{url}}"></web-view> -->
+<import src="../../wxParse/wxParse.wxml"/>
+<view style='padding:20rpx'><template is="wxParse" data="{{wxParseData:elp.nodes}}"/></view>

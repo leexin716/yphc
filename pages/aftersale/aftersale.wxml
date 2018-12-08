@@ -1,0 +1,5 @@
+<!--pages/aftersale/aftersale.wxml-->
+<view class='contitle'>
+  <view>地区</view>
+  <view>类型</view>
+</view>

@@ -1,0 +1,11 @@
+<!--pages/newcarlist/newcarlist.wxml-->
+<view wx:for="{{carList}}" wx:key="index">
+  <view class='timer'>{{item.pushTime}}</view>
+  <navigator url='/pages/cardetails/cardetails?id={{item.carId}}' hover-class='none'>
+    <view class='content'>
+      <view class='titile'>{{item.title}}</view>
+      <view class='middle'><image src="{{item.carImgUrlStr}}" style='width:120rpx;height:80rpx'></image><view>{{item.synopsis}}</view></view>
+      <view class='lookmore'><view>查看详情</view><view>></view></view>
+    </view>
+  </navigator>
+</view>

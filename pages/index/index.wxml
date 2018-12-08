@@ -1,0 +1,124 @@
+<!--index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<wxs module="getjsPar" src="../../filter/price.wxs"></wxs>
+<view class="searcher {{isBack?'backgd':''}}">
+  
+    <view class='cityclass'>
+    <navigator url='../citys/citys?mycity={{cityname}}'>
+      <view class='citycontennt'>
+        <view>{{cityname}}</view>
+        <view><image src="../../imgs/down_white.png" style='width:20rpx;height:16rpx'></image></view>
+      </view>
+      </navigator>
+    </view>
+  
+  <view style='width:60%'>
+      <view class='search_left' data-islogin="0" bindtap='search_login'>
+        <image src="../../imgs/car_search2.png" style='width:22rpx;height:22rpx'></image> 你想买什么车
+      </view>
+  </view>
+  <image src='../../imgs/icon_message2.png' style='width:40rpx;height:40rpx' data-islogin="1" bindtap='mess_login'></image>
+</view>
+<!-- banner -->
+<swiper indicator-dots="true" indicator-active-color="#FF5500" autoplay="true" interval="5000" duration="500" style='height:350rpx'>
+  <block wx:for="{{imgBanner}}" wx:key="index">
+      <!-- <navigator url='/pages/webview/webview?url={{item.url}}&&page=1&&title={{item.title}}'> -->
+      <swiper-item>
+        <image src="{{item.preImg}}" class="slide-image" style='width:100%;height:100%' data-islogin='4' data-url="{{item.url}}" data-title="{{item.title}}" data-page="1" bindtap='banner_login' />
+      </swiper-item>
+      <!-- </navigator> -->
+  </block>
+</swiper>
+<!-- 价格区间 -->
+<view class='price_content'>
+  <!-- 价格 -->
+  <view class='price_tabs'>
+    <block wx:for="{{price_tabs}}" wx:key="index">
+       <view class="{{currentTab==item.interval ? 'active':''}}" data-current="{{item.interval}}" bindtap='swichNav'>{{item.price}}</view>
+    </block>
+  </view>
+  <!-- logo标志 -->
+  <view class='price_logo'>
+    <block wx:for="{{logo_tabs}}" wx:key="index">
+      <view data-name='{{item.chineseName}}' data-id='{{item.id}}' bindtap='gofun'>
+        <image src="{{item.logo}}" style="width:60rpx;height:60rpx"/>
+        <view>{{item.chineseName}}</view>
+      </view>
+    </block>
+  </view>
+  <!-- 价位车 -->
+  <view class='price_car' wx:if="{{isShowPriceCartype}}">
+      <view class='price_car-left'>
+         <!-- <navigator url="/pages/cardetails/cardetails?id={{PriceInfo.id}}" hover-class="none"> -->
+          <view class='price_car-left-in' data-islogin="2" data-id="{{PriceInfo.id}}" bindtap='prleft_login'>
+            <view>{{PriceInfo.brand}}{{PriceInfo.typeClass}}</view>
+            <view>{{PriceInfo.name}}</view>
+            <view>月供{{PriceInfo.monthlyPaymentAmount}}元</view>
+            <image src="{{PriceInfo.imgTagList[0]}}" style="width:90rpx;height:30rpx"></image>
+            <image src="{{PriceInfo.imgUrl}}" style="width:300rpx;height:200rpx" />
+          </view>
+         <!-- </navigator> -->
+      </view>
+    <view class='price_car-right'>
+      <block wx:for="{{pcar_list}}" wx:key="index">
+          <!-- <navigator url="{{isLogin?('/pages/cardetails/cardetails?id='+item.id):('/pages/login/login')}}" hover-class="none"> -->
+          <!-- <navigator url="/pages/cardetails/cardetails?id={{item.id}}" hover-class="none"> -->
+          <view class='pricecar-item' data-id="{{item.id}}" data-islogin="2" bindtap='prleft_login'>
+            <view class='pricecar-item-word'>
+              <view class='pricecar-name'>{{item.brand}}{{item.typeClass}}</view>
+              <view class='pricecar-mou'>月供{{item.monthlyPaymentAmount}}元</view>
+              <image src="{{item.imgTagList[0]}}" style="width:90rpx;height:30rpx"></image>
+            </view>
+            <image src="{{item.imgUrl}}" style="width:220rpx;height:130rpx"></image>
+          </view>
+          <!-- </navigator> -->
+      </block>
+    </view>
+  </view>
+</view>
+<!-- 全场免首付 -->
+<view>
+  <view class='free_title'>——  全场免首付轻松购车  ——</view>
+  <view class='free_content'>
+      <block wx:for="{{recommend_list}}" wx:key="index">
+        <view class='free_item'>
+          <!-- <navigator url="/pages/cardetails/cardetails?id={{item.id}}" hover-class='none'> -->
+            <view class='free_itemer' data-id="{{item.id}}" data-islogin="2" bindtap='prleft_login'>
+              <image src="{{item.imgTagList[0]}}" style="width:90rpx;height:30rpx"></image>
+              <image src="{{item.imgUrl}}" style="width:280rpx;height:170rpx"></image>
+              <view class='free_itemer_title'>{{item.brand}} {{item.typeClass}}</view>
+              <view class='free_itemer_cont'>{{item.name}}</view>
+              <view class='free_itemer_cont'>月供{{item.monthlyPaymentAmount}}元</view>
+            </view>
+          <!-- </navigator> -->
+        </view>
+      </block>
+  </view>
+</view>
+<!-- 车主故事 -->
+<view style='margin-bottom:5px'>
+  <view class='free_title'>——  车主故事  ——</view>
+  <block wx:for="{{carStory_list}}" wx:key="index">
+    <!-- <navigator url='/pages/carstorydetails/carstorydetails?id={{index}}&&title={{item.title}}'> -->
+      <view class='story_content' data-idx="{{index}}" data-title="{{item.title}}" data-islogin="3" bindtap='story_login'>
+        <view>
+          <image src="{{item.img}}"  style="width:250rpx;height:190rpx"></image>
+        </view>
+        <view class='story_right'>
+          <view>{{item.buyTime}}</view>
+          <view>{{item.name}} {{item.carType}}</view>
+             <view class='story_right_content'>
+              <!-- <block wx:for="{{replyTemArray}}" wx:for-item="items" wx:for-index="indexs"> -->
+                <!-- <template is="wxParse" data="{{wxParseData:elper.nodes}}"/> -->
+              <!-- </block> -->
+              {{item.everyWorld}}
+             </view>
+        </view>
+      </view>
+    <!-- </navigator> -->
+  </block>
+</view>
+
+
+
+

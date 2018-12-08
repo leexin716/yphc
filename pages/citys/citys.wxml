@@ -1,0 +1,4 @@
+<!--pages/citys/citys.wxml-->
+ <view class='wrapper'> 
+  <list-html data="{{city}}" myCity="{{mycity}}" binddetail="bindtap"></list-html>
+ </view> 

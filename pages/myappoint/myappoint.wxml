@@ -1,0 +1,33 @@
+<!--pages/myappoint/myappoint.wxml-->
+<view class='content' wx:for="{{reservation}}" wx:key="index">
+  <view class='cnt_btm'>
+    <view class='cnt_top'>
+      <view><image src="{{item.carImgUrl}}" style='width:215rpx;height:130rpx'></image></view>
+      <view>
+        <view>{{item.carBrand}}</view>
+        <view>{{item.carTypeName}}</view>
+        <view style='color:#666'>厂商指导价：{{item.guidePrice}}万</view>
+      </view>
+    </view>
+  </view>
+  <view style='padding:20rpx 0 0 20rpx'><view class='shblock'>预约门店</view></view>
+  <view class='cnt_up'>
+    <view class='up_left'>
+      <view>{{item.shopName}}</view>
+      <view>{{item.shopAddress}}</view>
+    </view>
+    <view class='up_right'>
+      <view data-phone="{{item.shopTel}}" bindtap='callshop_phone'>
+        <image src="../../imgs/icon_phonecallsm.png" style='width:25rpx;height:25rpx;float:left;margin:8rpx 20rpx 0 0'></image>电话
+      </view>
+      <view data-lat="{{item.coordY}}" data-lng="{{item.coordX}}" data-name="{{item.shopName}}" data-address="{{item.shopAddress}}" bindtap='callshop_map'>
+        <image src="../../imgs/icon_mapsm.png" style='width:25rpx;height:25rpx;float:left;margin:8rpx 20rpx 0 0'></image>地图
+      </view>
+    </view>
+  </view>
+</view>
+<view class='nodata' wx:if="{{nodata}}">
+  <image src="../../imgs/noneData.png" style='width:150rpx;height:150rpx'></image>
+  <view class='nocarFav'>还没有关注的爱车</view>
+  <view class='goshoper' bindtap='gohappy'>去逛逛</view>
+</view>

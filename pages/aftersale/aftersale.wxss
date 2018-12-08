@@ -1,0 +1,14 @@
+/* pages/aftersale/aftersale.wxss */
+page{
+  background: #f7f7f7
+}
+.contitle{
+  display: flex;
+  font-size: 28rpx;
+  background: #fff;
+  padding: 20rpx 0;
+}
+.contitle view{
+  width: 50%;
+  text-align: center
+}

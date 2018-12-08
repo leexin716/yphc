@@ -1,0 +1,91 @@
+/* pages/mycenter/mycenter.wxss */
+page{
+  background: #f6f6f6;
+}
+.header{
+  display: flex;
+  align-items: center;
+  background-image: url('http://mp.static.youpinhaoche.com/centerBackImg.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  padding:35rpx;
+  font-size: 28rpx
+}
+.head_right{
+  padding-left: 20rpx
+}
+.navigator-box {
+  background:#fff;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  color: #333
+}
+.navigator {
+  padding: 20rpx 30rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.navigator:before {
+  content: " ";
+  position: absolute;
+  left: 30rpx;
+  top: 0;
+  right: 30rpx;
+  height: 1px;
+  border-top: 1rpx solid #D8D8D8;
+  color: #D8D8D8;
+}
+.navigator:first-child:before {
+  display: none;
+}
+.navigator-text {
+  flex: 1;
+}
+.navigator-arrow {
+  padding-right: 26rpx;
+  position: relative;
+}
+.navigator-arrow text{
+  color: #fff;
+  background: #549C98;
+  border-radius: 50%;
+  margin-right: 30rpx;
+  text-align: center;
+  padding: 0 15rpx;
+  /* display: inline-block;
+  width: 30rpx; */
+  /* height: 30rpx; */
+}
+.navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: 28rpx;
+}
+.btner{
+  width: 90%;
+  margin: auto
+}
+.btner button{
+  font-size:34rpx
+}
+.headAcatar{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #fff;
+  padding: 16rpx;
+}
+.headAcatar image{
+  border-radius: 50%;
+}

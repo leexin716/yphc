@@ -1,0 +1,12 @@
+<!--pages/configuration/configuration.wxml-->
+<view class='content'>
+  <block wx:for="{{content}}" wx:key="index">
+    <view class='sum_title'>—— {{item.name}} ——</view>
+    <block wx:for="{{item.list}}" wx:key="indx" wx:for-item="items">
+      <view class='contenter'>
+        <view>{{items.name}}</view>
+        <view>{{items.value}}</view>
+      </view>
+    </block>
+  </block>
+</view>

@@ -1,0 +1,275 @@
+/* pages/home/home.wxss */
+
+page {
+  background: #f7f7f7;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url(data:font/truetype;charset=utf-8;base64,AAEAAAANAIAAAwBQRkZUTYU46v8AAAa0AAAAHEdERUYAKQALAAAGlAAAAB5PUy8yPINImwAAAVgAAABWY21hcOdS6UAAAAHEAAABSmdhc3D//wADAAAGjAAAAAhnbHlmu5vzSQAAAxwAAACcaGVhZBKyB+EAAADcAAAANmhoZWEHRgOFAAABFAAAACRobXR4DMQAlwAAAbAAAAASbG9jYQAmAE4AAAMQAAAADG1heHABEAAhAAABOAAAACBuYW1lKeYRVQAAA7gAAAKIcG9zdP8HG+YAAAZAAAAASQABAAAAAQAARUTadV8PPPUACwQAAAAAANfKYfsAAAAA18ph+wCXAFoDaAKUAAAACAACAAAAAAAAAAEAAAOA/4AAXAQAAAAAAANoAAEAAAAAAAAAAAAAAAAAAAAEAAEAAAAFABUAAQAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQQAAZAABQAAAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA5hXmqQOA/4AAXAOAAIAAAAABAAAAAAAABAAAAAAAAAAEAAAABAAAlwDEAAAAAAADAAAAAwAAABwAAQAAAAAARAADAAEAAAAcAAQAKAAAAAYABAABAALmFeap//8AAOYV5qn//xnuGVsAAQAAAAAAAAAAAQYAAAEAAAAAAAAAAQIAAAACAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACYATgABAJcAWgNoApQAEgAAJSIvAS4BPgEfAQE+AR4BBwEGBwGvEQ3sDQEaJA7JAWwNIx0DC/51DRNaDeENJBsBDcEBvA4DGCMP/iAOAgAAAQDEAMoDPAI0ABQAAAEnJiIPAQYUFwEWNjcBNjQvASYiBwIA9QwgDAQLCwETDSINARMLCwQMIAwBM/YLCwUMIA3+7A0DCgEUDB8MBAwMAAAAABIA3gABAAAAAAAAABUALAABAAAAAAABAAgAVAABAAAAAAACAAcAbQABAAAAAAADAAgAhwABAAAAAAAEAAgAogABAAAAAAAFAAsAwwABAAAAAAAGAAgA4QABAAAAAAAKACsBQgABAAAAAAALABMBlgADAAEECQAAACoAAAADAAEECQABABAAQgADAAEECQACAA4AXQADAAEECQADABAAdQADAAEECQAEABAAkAADAAEECQAFABYAqwADAAEECQAGABAAzwADAAEECQAKAFYA6gADAAEECQALACYBbgAKAEMAcgBlAGEAdABlAGQAIABiAHkAIABpAGMAbwBuAGYAbwBuAHQACgAACkNyZWF0ZWQgYnkgaWNvbmZvbnQKAABpAGMAbwBuAGYAbwBuAHQAAGljb25mb250AABSAGUAZwB1AGwAYQByAABSZWd1bGFyAABpAGMAbwBuAGYAbwBuAHQAAGljb25mb250AABpAGMAbwBuAGYAbwBuAHQAAGljb25mb250AABWAGUAcgBzAGkAbwBuACAAMQAuADAAAFZlcnNpb24gMS4wAABpAGMAbwBuAGYAbwBuAHQAAGljb25mb250AABHAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAHMAdgBnADIAdAB0AGYAIABmAHIAbwBtACAARgBvAG4AdABlAGwAbABvACAAcAByAG8AagBlAGMAdAAuAABHZW5lcmF0ZWQgYnkgc3ZnMnR0ZiBmcm9tIEZvbnRlbGxvIHByb2plY3QuAABoAHQAdABwADoALwAvAGYAbwBuAHQAZQBsAGwAbwAuAGMAbwBtAABodHRwOi8vZm9udGVsbG8uY29tAAACAAAAAAAAAAoAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAUAAAABAAIBAgEDBWNoZWNrFmppYW50b3UteGlhLWN1eGlhbnRpYW8AAAAAAAAB//8AAgABAAAADAAAABYAAAACAAEAAwAEAAEABAAAAAIAAAAAAAAAAQAAAADVpCcIAAAAANfKYfsAAAAA18ph+w==) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-check:before { content: "\e615"; }
+
+.icon-jiantou-xia-cuxiantiao:before { content: "\e6a9"; }
+
+.brandContent {
+  padding: 0 40rpx;
+  background: #fff;
+}
+
+.brand {
+  padding: 40rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.brandTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brandTopInit {
+  text-align: center;
+  background: #ccc;
+  font-size: 24rpx;
+  color: #666;
+  width: 120rpx;
+  padding: 8rpx 0;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.active {
+  color: #fff;
+  background: #549c98;
+}
+
+
+.brandBtm {
+  display: flex;
+  font-size: 24rpx;
+  justify-content: space-between;
+  padding-top: 40rpx;
+}
+
+.brandBtmIcon {
+  text-align: center;
+}
+
+.groomTitle {
+  font-size: 28rpx;
+  padding: 15rpx 0;
+  font-weight: bold;
+}
+
+.groomList {
+  display: flex;
+  padding-bottom: 20rpx;
+  justify-content: space-between;
+}
+.groomListItem{
+  margin: 0 20rpx;
+}
+.groomListItem:first-child{
+  margin-left: 0;
+}
+.groomListItem:last-child{
+  margin-right: 0;
+}
+
+.fontSize12 {
+  font-size: 24rpx;
+}
+
+.fontSize14 {
+  font-size: 28rpx;
+}
+
+.fontSize16 {
+  font-size: 32rpx;
+}
+
+.brandType {
+  font-weight: bold;
+}
+
+.brandMouth {
+  color: #ff0307;
+}
+
+.tabTag {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  background: #fff;
+  line-height: 80rpx;
+  height: 80rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.tabtop {
+  margin-top: 20rpx;
+}
+
+.carList {
+  padding: 0 40rpx;
+  background: #fff;
+  padding-bottom: 80rpx;
+}
+
+.dialog {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 80rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.dialogContent {
+  background: #fff;
+  z-index: 1000;
+}
+
+.dialogContenter{
+  font-size: 28rpx;
+  padding: 20rpx 40rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+.topnav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.carLisTable {
+  display: flex;
+  padding: 40rpx 0;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.carLisTableLeft {
+  width: 30%;
+}
+
+.carLisTableRight {
+  width: 70%;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20rpx;
+}
+
+.carLisTableRight view:first-child {
+  color: #333;
+  font-size: 32rpx;
+}
+
+.carLisTableRight view:nth-child(2) {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.carLisTableRight view:last-child {
+  color: #ff0307;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  z-index: 999;
+}
+
+.loading {
+  padding: 10rpx;
+  text-align: center;
+}
+
+.loading:before {
+  display: inline-block;
+  margin-right: 5rpx;
+  vertical-align: middle;
+  content: '';
+  width: 40rpx;
+  height: 40rpx;
+  background: url(../../imgs/down.png) no-repeat;
+  background-size: contain;
+  animation: rotate 1s linear infinite;
+}
+
+.loading.complete:before {
+  display: none;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.overflower {
+  overflow: hidden;
+  height: 100%;
+}
+
+.green {
+  color: #549c98;
+}
+
+.tabflex {
+  display: flex;
+  align-items: center;
+  width: 24%;
+  text-align: center;
+  justify-content: center;
+}
+.tabflex view:first-child{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.triangle{
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #549c98;
+  position: absolute;
+  bottom: -4px;
+  left: 55rpx;
+
+}
+.icon-jiantou-xia-cuxiantiao{
+  transition: All 0.4s ease-in-out;
+  -webkit-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
+  -o-transition: All 0.4s ease-in-out;
+}
+.tranfrom{
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+}

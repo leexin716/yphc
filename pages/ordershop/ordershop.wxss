@@ -1,0 +1,160 @@
+/* pages/ordershop/ordershop.wxss */
+.car_info{
+  display: flex;
+  margin: 20rpx 0;
+  background: #fff;
+  padding: 20rpx 10rpx;
+  align-items: center
+}
+.car_img{
+  width: 40%;
+}
+.car_word view{
+  font-size: 32rpx
+}
+.car_word view:nth-child(3){
+  font-size: 28rpx;
+  color: #666
+}
+.car_word view:last-child{
+  font-size: 28rpx;
+  color: #666
+}
+.order_all{
+  background: #fff
+}
+.order_name{
+  display: flex;
+  font-size: 32rpx;
+  align-items: center
+}
+.name_left{
+  width: 22%;
+  padding: 20rpx 0 20rpx 20rpx;
+}
+.name_right{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:20rpx 0;
+  border-bottom: 1px solid #eee
+}
+.name_input{
+  width: 50%;
+}
+.name_check{
+  width: 50%
+}
+.order_phone_one{
+  display: flex;
+  font-size: 32rpx;
+  align-items: center;
+}
+.phone_left_one{
+  width: 22%;
+  padding: 20rpx 0 20rpx 20rpx;
+}
+.phone_right_one{
+  width: 78%;
+  padding:20rpx 0;
+  border-bottom: 1px solid #eee
+}
+.order_code{
+  display: flex;
+  font-size: 32rpx;
+  align-items: center;
+}
+.code_left{
+  width: 22%;
+  padding: 20rpx 0 20rpx 20rpx;
+}
+.code_right{
+  width: 78%;
+  border-bottom: 1px solid #eee
+}
+.code_righter{
+  padding:20rpx 20rpx 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+.code_righter view:first-child{
+  width: 50%
+}
+.code_righter view:last-child{
+  width: 50%;
+  color: #FF5500;
+  text-align: right
+}
+.select{
+  display: flex;
+  font-size: 32rpx;
+}
+.select_left{
+  width: 22%;
+  padding: 20rpx 0 20rpx 20rpx;
+}
+.select_right{
+  width: 78%;
+}
+.select_righter{
+  padding:20rpx 20rpx 20rpx 0;
+}
+.select_address{
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 20rpx
+}
+.store_logo{
+  width: 180rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  background: #feeeec;
+  border:1px solid #FF5500;
+  border-radius: 3px;
+  margin:10rpx 0
+}
+.store_logo view:first-child{
+  width: 55%;
+  float: left;
+  text-align: center;
+  color: #fff;
+  background: #FF5500;
+  font-size: 24rpx;
+}
+.store_logo view:last-child{
+  width: 45%;
+  float: left;
+  text-align: center;
+  font-size: 24rpx;
+  color: #FF5500
+}
+.order_btn{
+  width: 90%;
+  margin: 20rpx auto
+}
+ button{
+  background: #FF5500;
+  color: #fff
+}
+.button-hover {
+  background-color: #f88953;
+  color: #fff
+}
+.use_orther{
+  font-size: 32rpx;
+  color: #FF5500;
+  text-align: center
+}
+.choosename{
+  display: flex;
+  justify-content: space-between
+}
+.choosename view:first-child{
+  width: 95%
+}
+radio .wx-radio-input.wx-radio-input-checked{
+    border-color:#FF5500 !important; 
+   background: #FF5500!important;
+}

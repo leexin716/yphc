@@ -1,0 +1,92 @@
+/* pages/carserve/carserve.wxss */
+page{
+  background: #f6f6f6
+}
+.severInfo{
+  height: 220rpx;
+  background-image:url("http://mp.static.youpinhaoche.com/severbanner.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+.useTab{
+  display: flex;
+  font-size: 28rpx;
+  color: #549c98;
+  justify-content: space-around;
+  text-align: center;
+  padding: 30rpx 0;
+  background: #fff;
+}
+.seInfoLeft{
+  position: absolute;
+  top:50rpx;
+  color: #fff;
+  left: 220rpx;
+  font-size: 32rpx;
+}
+.seInfoLeft view:first-child{
+  font-size: 28rpx;
+}
+.seInfoRight{
+  font-size: 24rpx;
+  background: linear-gradient( #FFB864, #C96400);
+  color: #fff;
+  position: absolute;
+  right: 10rpx;
+  top:10rpx;
+  padding: 5rpx 10rpx;
+  border-radius: 10rpx;
+}
+.carOwner{
+  padding: 0 40rpx;
+}
+.carOwnerTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  padding: 40rpx 0;
+}
+
+.carOwnerTitle text {
+  display: inline-block;
+  width: 60rpx;
+  height: 1px;
+  background: #ccc;
+  margin: 0 30rpx;
+}
+.columnContent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+.columnLeft{
+  font-size: 28rpx;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #666
+}
+.columnRight{
+  font-size: 0
+}
+.columnLeftTwo{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  padding-bottom: 20rpx;
+}
+.columnLeftOne{
+  font-size: 32rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color: #333
+}
+.columnLeftOne text{
+  color: #549c98
+}

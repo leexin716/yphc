@@ -1,0 +1,7 @@
+<!--pages/question/question.wxml-->
+<view class='content'>
+  <view class='contenter' wx:for="{{qalist}}" wx:key="index">
+    <view>{{item.question}}</view>
+    <view><text>{{item.answer}}</text></view>
+  </view>
+</view>

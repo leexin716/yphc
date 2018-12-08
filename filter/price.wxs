@@ -1,0 +1,13 @@
+var Price = {
+  getPrice: function (p) {
+    return ((p / 10000).toFixed(2))
+  },
+  jsPar:function(p){
+    return JSON.stringify(p)
+  }
+}
+
+module.exports = {
+  getPrice: Price.getPrice,
+  jsPar: Price.jsPar
+}

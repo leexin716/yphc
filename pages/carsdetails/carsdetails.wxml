@@ -1,0 +1,247 @@
+
+<import src="../../wxParse/wxParse.wxml"/>
+<!-- 轮播图 -->
+<view class='swiper'>
+  <swiper autoplay="true" interval="3000" duration="500" style='height:450rpx' bindchange="bindchange">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" style='width:100%' />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="dots">
+      <view>{{swiperCurrent+1}}/{{swiper_data_num}}</view>
+      <view>车辆图片仅供参考，以车辆配置描述为准</view>
+  </view>
+</view>
+<!-- 广告banner -->
+<view style='font-size:0'>
+  <image src='../../imgs/addBanner.png' style='width:100%;height:90rpx'></image>
+</view>
+<!-- title -->
+<view class='carTitle'>
+  <view class='carTitle_left'>
+    <view>{{CarInfor.brand}} {{CarInfor.typeClass}}</view>
+    <view>{{CarInfor.name}}</view>
+    <view>厂家指导价：<text>{{guidePrice}}</text>万</view>
+  </view>
+  <button class='carTitle_right' open-type='share'  hover-class='none'>
+      <image src='../../imgs/shareImg.png' style='width:60rpx;height:60rpx'></image>
+      <view>分享</view>
+    </button>
+    
+</view>
+<!-- 购车方案 -->
+<view class='planer'>
+  <view wx:for='{{planList}}' wx:key='index' class="{{currentIndex == index ? 'activer':''}}" data-current='{{index}}' bindtap='TipPlan'>{{item}}</view>
+</view>
+<!-- 购车 -->
+<view class='buyCar' wx:if="{{showIndex == 0?true:false}}">
+  <view class='rentCar' wx:for='{{FinancingPlansList}}' wx:key='index'>
+    <view class='rentCar_top'>
+      <view class='rentCar_top_left'>
+        <text></text>分期购车方案{{index+1}}</view>
+      <view class='rentCar_top_right'>
+        <image src='../../imgs/rent_gift.png' style='width:24rpx;height:24rpx;padding-right:4rpx'></image>
+        <text style='color:#ff0307'>限时活动月租288元起</text>
+        <image src='../../imgs/rent_free.png' style='width:24rpx;height:24rpx;padding:0 4rpx 0 20rpx'></image>
+        <text>首年保险</text>
+      </view>
+    </view>
+    <view class='buyCarContent' wx:for="{{item.instalmentPlans}}" wx:key="idx" wx:for-item="items">
+      <view class='buyCar_btm'>
+        <view>
+          <view class='rentCar_btm_top'>履约保证金（元）</view>
+          <view class='rentCar_btm_btm'>{{item.deposit}}</view>
+        </view>
+        <view>
+          <view class='rentCar_btm_top'>月供（元）</view>
+          <view class='rentCar_btm_btm'>{{items.monthlyRepayment}}</view>
+        </view>
+        <view>
+          <view class='rentCar_btm_top'>期数（月）</view>
+          <view class='rentCar_btm_btm'>{{items.term}}</view>
+        </view>
+      </view>
+       <view class='buyCar_btm'>
+        <view>
+          <view class='rentCar_btm_top'>首付（元）</view>
+          <view class='rentCar_btm_btm'>0</view>
+        </view>
+        <view>
+          <view class='rentCar_btm_top'>按揭手续费（元）</view>
+          <view class='rentCar_btm_btm'>{{item.serviceAmount}}</view>
+        </view>
+        <view>
+          <view class='rentCar_btm_top'>尾款（月）</view>
+          <view wx:if="{{items.tailMoney == 0}}" class='rentCar_btm_btm'>无尾款</view>
+          <view wx:else class='rentCar_btm_btm'>{{items.tailMoney}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 租车 -->
+<view class='rentContent' wx:if="{{showIndex == 1?true:false}}">
+  <view class='rentCar'>
+    <view class='rentCar_top'>
+      <view class='rentCar_top_left'>
+        <text></text>分期</view>
+      <view class='rentCar_top_right'>
+        <image src='../../imgs/rent_gift.png' style='width:24rpx;height:24rpx;padding-right:4rpx'></image>
+        <text style='color:#ff0307'>限时活动月租288元起</text>
+        <image src='../../imgs/rent_free.png' style='width:24rpx;height:24rpx;padding:0 4rpx 0 20rpx'></image>
+        <text>首年保险</text>
+      </view>
+    </view>
+    <view class='rentCar_btm'>
+      <view>
+        <view class='rentCar_btm_top'>履约保证金（元）</view>
+        <view class='rentCar_btm_btm'>3000</view>
+      </view>
+      <view>
+        <view class='rentCar_btm_top'>月租（元）</view>
+        <view class='rentCar_btm_btm'>1288</view>
+      </view>
+      <view>
+        <view class='rentCar_btm_top'>租期（月）</view>
+        <view class='rentCar_btm_btm'>6</view>
+      </view>
+    </view>
+  </view>
+  <view class='rentCar'>
+    <view class='rentCar_top'>
+      <view class='rentCar_top_left'>
+        <text></text>一次性</view>
+      <view class='rentCar_top_right'>
+        <image src='../../imgs/rent_gift.png' style='width:24rpx;height:24rpx;padding-right:4rpx'></image>
+        <text style='color:#ff0307'>限时活动月租288元起</text>
+        <image src='../../imgs/rent_free.png' style='width:24rpx;height:24rpx;padding:0 4rpx 0 20rpx'></image>
+        <text>首年保险</text>
+      </view>
+    </view>
+    <view class='rentCar_btm'>
+      <view>
+        <view class='rentCar_btm_top'>履约保证金（元）</view>
+        <view class='rentCar_btm_btm'>3000</view>
+      </view>
+      <view>
+        <view class='rentCar_btm_top'>月租（元）</view>
+        <view class='rentCar_btm_btm'>1288</view>
+      </view>
+      <view>
+        <view class='rentCar_btm_top'>租期（月）</view>
+        <view class='rentCar_btm_btm'>6</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 试车 -->
+<view class='testCarContent' wx:if="{{showIndex == 2?true:false}}">
+  <view class='testCarTitle'>试驾流程</view>
+  <view class='testCarProcess'>
+    <view><image src='../../imgs/apply.png' style='width:60rpx;height:60rpx'></image><view>在线申请</view></view>
+    <image src='../../imgs/nexter.png' style='width:20rpx;height:30rpx;margin-top:16rpx'></image>
+    <view><image src='../../imgs/apply.png' style='width:60rpx;height:60rpx'></image><view>收到短信</view></view>
+    <image src='../../imgs/nexter.png' style='width:20rpx;height:30rpx;margin-top:16rpx'></image>
+    <view><image src='../../imgs/apply.png' style='width:60rpx;height:60rpx'></image><view>到店试驾</view></view>
+    <image src='../../imgs/nexter.png' style='width:20rpx;height:30rpx;margin-top:16rpx'></image>
+    <view><image src='../../imgs/apply.png' style='width:60rpx;height:60rpx'></image><view>获取礼品</view></view>
+  </view>
+</view>
+<!-- 附近门店 -->
+<view class='nearContent'>
+  <view class='nearTitle'><text></text>附近门店<text></text></view>
+  <view class='nearName'>
+    <view>{{firstShop.name}}</view>
+    <view>距你123m</view>
+  </view>
+  <view class='nearAddress'>{{firstShop.address}}</view>
+  <view class='naerContant'>
+    <view data-phone="{{firstShop.telphone}}" bindtap='callshop_phone'>
+      <image src='../../imgs/icon_phonecall.png' style='width:30rpx;height:30rpx;margin-right:10rpx'></image>电话
+    </view>
+    <view data-lat="{{firstShop.coordY}}" data-lng="{{firstShop.coordX}}" data-name="{{firstShop.name}}" data-address="{{firstShop.address}}" bindtap='callshop_map'>
+      <image src='../../imgs/icon_map.png' style='width:30rpx;height:30rpx;margin-right:10rpx'></image>地图
+    </view>
+  </view>
+  <navigator url='/pages/shoplist/shoplist?id={{cartypeid}}' hover-class='none'><view class='naerAllShop'>查看全部门店</view></navigator>
+</view>
+<!-- 车型亮点 -->
+<view class='nearContent'>
+  <view class='nearTitle'><text></text>车型亮点<text></text></view>
+  <view class='configureLight'>
+    <view wx:for="{{configureList}}" wx:key="index">
+      <view>{{item.value}}</view>
+      <view>{{item.name}}</view>
+    </view>
+  </view>
+  <navigator url='/pages/configuration/configuration?configs={{configs}}' hover-class='none'><view class='naerAllShop'>查看配置详情</view></navigator>
+  <template is="wxParse" data="{{wxParseData:elp.nodes}}"/>
+</view>
+<!-- 提车须知 -->
+<view class='carLiftContent'>
+  <view class='nearTitle'><text></text>提车须知<text></text></view>
+  <view class='carLift'>
+    <view>车辆归属</view>
+    <view>在结清车款前车辆所有权归优品出行</view>
+  </view>
+  <view class='carLift'>
+    <view>所需资料</view>
+    <view>您只需要提供二代身份证，银行卡及有效驾驶证</view>
+  </view>
+  <view class='carLift'>
+    <view>保险费用</view>
+    <view>优品出行送1年车险，含交强险、第三者责任险（150万）、车上人员责任险(司机)、车损险及以上几项险种的不计免赔险；提供盗抢险和自燃险理赔服务。如需增加其他保险险种，可联系顾问办理，增加险种费用由用户自己承担</view>
+  </view>
+  <view class='carLift'>
+    <view>车辆上牌</view>
+    <view>车辆牌照上在租售人名下，上牌手续由优品出行负责办理</view>
+  </view>
+  <view class='carLift'>
+    <view>按月还款</view>
+    <view>每月还款通过指定银行卡扣款，系统自动划扣</view>
+  </view>
+  <view class='nearTitle'><text></text>4步提车<text></text></view>
+  <view class='carStep'>
+    <view><image src='../../imgs/booKingTwo.png' style='width:54rpx;height:54rpx'></image></view>
+    <view class='carStepRight'>
+      <view>预约到店</view>
+      <view>选好意向车型后，优品出行直营店客户经理将在24小时内为您提供1对1服务</view>
+    </view>
+  </view>
+  <view class='carStep'>
+    <view><image src='../../imgs/booKingTwo.png' style='width:54rpx;height:54rpx'></image></view>
+    <view class='carStepRight'>
+      <view>信用评估</view>
+      <view>选择合适的租售方案，在优品出行APP内完善个人资料，通过征信审核后即可签订租售合同</view>
+    </view>
+  </view>
+  <view class='carStep'>
+    <view><image src='../../imgs/booKingTwo.png' style='width:54rpx;height:54rpx'></image></view>
+    <view class='carStepRight'>
+      <view>支付费用</view>
+      <view>确定租售方案，支付定金，签约租售合同，办理提车手续</view>
+    </view>
+  </view>
+  <view class='carStep'>
+    <view><image src='../../imgs/booKingTwo.png' style='width:54rpx;height:54rpx'></image></view>
+    <view class='carStepRight'>
+      <view>到店提车</view>
+      <view>优品出行会为您办理保险及上牌手续，收到提车通知后即可到指定门店提车</view>
+    </view>
+  </view>
+</view>
+<!-- 底部按钮 -->
+<view class='carbtn'>
+  <view class='carbtnLeft' bindtap='add_remove_fav'>
+    <view>
+      <image wx:if="{{isfav}}" src='http://qiniu.youpinhaoche.com/2018/06/07/icon_fav.png' style='width:35rpx;height:35rpx'></image>
+      <image wx:else src='http://qiniu.youpinhaoche.com/2018/06/07/icon_unfav.png' style='width:35rpx;height:35rpx'></image>
+    </view>
+    <view wx:if="{{!isfav}}">关注</view>
+    <view wx:else>取消</view>
+  </view>
+  <view style='width:80%' wx:if="{{showIndex == 2}}"><navigator url='/pages/ordershop/ordershop?carinfo={{shopInfor}}'><view class='carbtnRight'>申请试驾</view></navigator></view>
+   <view style='width:80%' wx:else><navigator url='/pages/ordershop/ordershop?carinfo={{shopInfor}}'><view class='carbtnRight'>我要咨询</view></navigator></view>
+</view>

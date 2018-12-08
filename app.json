@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/carselect/carselect",
+    "pages/mycenter/mycenter",
+    "pages/login/login",
+    "pages/cardetails/cardetails",
+    "pages/ordershop/ordershop",
+    "pages/carstorydetails/carstorydetails",
+    "pages/shoplist/shoplist",
+    "pages/configuration/configuration",
+    "pages/myfollow/myfollow",
+    "pages/myappoint/myappoint",
+    "pages/authentication/authentication",
+    "pages/opinion/opinion",
+    "pages/question/question",
+    "pages/success/success",
+    "pages/search/search",
+    "pages/notice/notice",
+    "pages/newcarlist/newcarlist",
+    "pages/funpartylist/funpartylist",
+    "pages/sysnoticelist/sysnoticelist",
+    "pages/webview/webview",
+    "pages/citys/citys",
+    "pages/uploading/uploading",
+    "pages/giveup/giveup",
+    "pages/mypage/mypage",
+    "pages/redirect/redirect",
+    "pages/index/index",
+    "pages/carsdetails/carsdetails",
+    "pages/carserve/carserve",
+    "pages/aftersale/aftersale"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#549c98",
+    "navigationBarTitleText": "优品出行",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f7f7f7",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "imgs/home_unselect.png",
+        "selectedIconPath": "imgs/home_select.png"
+      },
+      {
+        "pagePath": "pages/carserve/carserve",
+        "text": "车主服务",
+        "iconPath": "imgs/car.png",
+        "selectedIconPath": "imgs/car_a.png"
+      },
+      {
+        "pagePath": "pages/mycenter/mycenter",
+        "text": "我的",
+        "iconPath": "imgs/my.png",
+        "selectedIconPath": "imgs/my_a.png"
+      }
+    ],
+    "selectedColor": "#549c98"
+  }
+}

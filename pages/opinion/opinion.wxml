@@ -1,0 +1,6 @@
+<!--pages/opinion/opinion.wxml-->
+<view class='opinion'>
+  <view><textarea placeholder='请输入您需要反馈的意见' auto-focus="true" maxlength="-1" bindinput='word'></textarea></view>
+  <view><input type='number' placeholder='请输入您的手机号' maxlength='11' bindinput='usphone'></input></view>
+</view>
+<view class='btn'><button bindtap='tiper'>提交</button></view>

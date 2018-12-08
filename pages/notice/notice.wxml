@@ -1,0 +1,23 @@
+<!--pages/notice/notice.wxml-->
+<view class='content'>
+  <view class='boddy'>
+    <block wx:for="{{messagelist}}" wx:key="index">
+      <navigator url='/pages/{{item.page}}/{{item.page}}?typer={{item.typer}}' hover-class='none'>
+        <view class='notice' >
+          <view class='not_left'><image src="{{item.imgs}}" style='width:85rpx;height:85rpx'></image></view>
+          <view class='not_right'>
+            <view class='right_top'>
+              <view>{{item.name}}</view>
+              <view>{{item.time}}</view>
+            </view>
+            <view class='btm_title'>{{item.title}}</view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <view style='padding-top:300rpx;text-align:center;color:#999;font-size:34rpx' wx:if="{{nodata}}">
+    <image src="../../imgs/noneData.png" style='width:180rpx;height:180rpx'></image>
+    <view style='margin-top:10rpx'>暂无消息</view>
+  </view>
+</view>

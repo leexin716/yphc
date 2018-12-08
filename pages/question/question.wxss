@@ -1,0 +1,21 @@
+/* pages/question/question.wxss */
+.content{
+  background: #fff;
+  padding: 0 30rpx;
+}
+.contenter{
+  border-bottom:1px dashed
+}
+.content .contenter :last-child{
+  border-bottom:none
+}
+.contenter view:first-child{
+  padding: 20rpx 0 10rpx 0;
+  font-size: 32rpx;
+  color: #549c98
+}
+.contenter view:last-child{
+  padding: 10rpx 0 20rpx 0;
+  color: #333;
+  font-size: 30rpx
+}

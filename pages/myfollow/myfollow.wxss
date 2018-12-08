@@ -1,0 +1,57 @@
+/* pages/myfollow/myfollow.wxss */
+page{
+  background: #f6f6f6;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 0
+}
+.contenter{
+  display: flex;
+  align-items: center;
+  background: #fff;
+  position: relative;
+  margin: 15rpx 0
+}
+.cnt_left{
+  width: 35%;
+  padding: 20rpx
+}
+.cnt_right{
+  font-size: 30rpx;
+  padding-right: 20rpx
+}
+.cnt_right view:nth-child(2){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+.cnt_right view:nth-child(3){
+  color: #666
+}
+.favor{
+  position:absolute;
+  top:30rpx;
+  right:35rpx;
+}
+.nodata{
+  text-align: center;
+  padding-top:300rpx
+}
+.nocarFav{
+  color: #666;
+  font-size: 30rpx;
+  padding: 25rpx 0
+}
+.goshoper{
+  width:280rpx;
+  line-height:60rpx;
+  text-align:center;
+  color:#fff;
+  background:#FF5500;
+  font-size:30rpx;
+  border-radius:5px;
+  margin:auto;
+}

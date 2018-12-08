@@ -1,0 +1,57 @@
+<!--pages/uploadimg/uploadimg.wxml-->
+
+<view class='header'>
+  <!-- <image src="{{imgs}}" style='width:100%;height:500rpx'></image> -->
+  <view class='bannerimg' style='background-image: url({{imgs}})'></view>
+  <view class='cenimg' bindtap='upload' wx:if="{{isUpload}}">
+    <image src='../../imgs/crema.png' style='width:110rpx;height:80rpx'></image>
+    <view style='padding-top:10rpx'>选一张珍藏的照片</view>
+    <view>邀请朋友点赞围观吧</view>
+  </view>
+  <view class='changeimg' wx:if="{{isUploader}}" bindtap='upload'><image src="../../imgs/changeimg.png" style='width:30rpx;height:30rpx'></image><view>换图</view></view>
+</view>
+<view class='contian'>
+  <picker class='time' mode="date" value="{{date}}" start="1900-08-08" end="2030-08-08" bindchange="bindDateChange">
+    <view class="picker">
+      开始时间: {{date}}
+    </view>
+  </picker>
+  <view class='fhword'>世界人口60多亿，一辈子遇到29,200,000人两个人相爱的概率是0.000049%</view>
+  <view class='talker'>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        <view>点击选择属于你的情话</view>
+        <view style='padding-top:20rpx'>{{array[index]}}</view>
+      </view>
+    </picker>
+    <!-- <view>听说，时间会把陪伴熬成最美的情话，我想这样的情话我会跟你说一辈子</view>
+    <button bindtap='selecter'>点击选择属于你的情话</button> -->
+  </view>
+</view>
+<view class='bttn'><button class='buttn' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" hover-class='hhh'>生成爱情计时器</button></view>
+<!-- <modal show="{{showModal}}" height='60%'>
+  <view class='modal-content'>
+    <view class='titler'>您的爱情计时器.jpg已经保存至相册赶紧去秀一秀！</view>
+    <image src="../../imgs/farse.png" style='width:100%;height:500rpx'></image>
+  </view>
+</modal> -->
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">
+      <view>您的爱情计时器.jpg已经保存至相册</view>
+      <view>赶紧去秀一秀！</view>
+    </view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <view class='xialaimg'>
+          <image src="../../imgs/farse.png" style='width:100%;height:300rpx'></image>
+          <view style='padding-top:20rpx'>下拉点击小程序</view>
+          <view>即可看到好友给你的祝福！</view>
+        </view>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+</view>

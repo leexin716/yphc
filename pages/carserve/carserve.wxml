@@ -1,0 +1,33 @@
+<!--pages/carserve/carserve.wxml-->
+<!-- 车主信息 -->
+<view class='severInfo'>
+  <view class='seInfoLeft'>
+    <view>我的爱车</view>
+    <view>知豆D2S</view>
+    <view>浙B00001</view>
+  </view>
+  <view class='seInfoRight'>VIP1车主</view>
+</view>
+<!-- 应用选项 -->
+<view class='useTab'>
+  <view><image src='../../imgs/serve_dot.png' style='width:60rpx;height:60rpx'></image><view>售后网点</view></view>
+  <view><image src='../../imgs/car_credit.png' style='width:60rpx;height:60rpx'></image><view>信用养车</view></view>
+  <view><image src='../../imgs/car_charge.png' style='width:60rpx;height:60rpx'></image><view>附近电桩</view></view>
+  <view><image src='../../imgs/car_story.png' style='width:60rpx;height:60rpx'></image><view>车主故事</view></view>
+</view>
+<!-- 车主专栏 -->
+<view class='carOwner'>
+  <view class='carOwnerTitle'><text></text>车主专栏<text></text></view>
+  <view class='columnContent'>
+    <view class='columnLeft'>
+      <view>
+        <view class='columnLeftOne'><text>【养车】</text>女神新能源用车记</view>
+        <view class='columnLeftTwo'>购买电动汽车的小伙伴们，都有一肚子的辛酸泪</view>
+      </view>
+      <view>1500阅读</view>
+    </view>
+    <view class='columnRight'>
+      <image src='../../imgs/hotel.png' style='width:180rpx;height:130rpx'></image>
+    </view>
+  </view>
+</view>

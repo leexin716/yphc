@@ -1,0 +1,45 @@
+/* pages/login/login.wxss */
+.content{
+  padding:0 35rpx;
+  background: #fff;
+  font-size: 32rpx
+}
+.phonecl view:first-child{
+  padding-top:20rpx
+}
+.phonecl view:last-child{
+  padding: 10rpx 0 20rpx 0;
+  border-bottom: 1px solid #eee
+}
+.coder{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.coderlt{
+  width: 60%
+}
+.coderlt view:first-child{
+  padding-top: 20rpx
+}
+.editcode{
+  padding: 10rpx 0 20rpx 0;
+}
+.getcode{
+  font-size: 30rpx;
+  color: #549c98
+}
+.btn{
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+  background: #549c98;
+  border-radius: 5px;
+  font-size: 32rpx
+}
+.codeBtn{
+  width: 220rpx
+}
+.hoverbtn{
+  background: #7cc2be
+}

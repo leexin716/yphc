@@ -1,0 +1,180 @@
+/* pages/uploadimg/uploadimg.wxss */
+.header{
+  width: 100%;
+  height: 500rpx;
+  position: relative;
+  /* background-image: url('http://mp.static.youpinhaoche.com/mohu.jpg');
+  background-repeat: no-repeat;
+  background-size: contain; */
+}
+.bannerimg{
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 500rpx;
+  z-index: -1
+}
+.cenimg{
+  position: absolute;
+  top: 155rpx;
+  left: 32.5%;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center
+}
+.contian{
+  width: 100%;
+  height: 500rpx;
+  margin-top: 100rpx;
+  background-image: url('http://mp.static.youpinhaoche.com/aixin.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  font-size: 32rpx
+}
+.time{
+  text-align: center;
+  font-size: 36rpx
+}
+.talker{
+  padding: 30rpx 60rpx 0 60rpx;
+}
+.bttn{
+  padding-bottom: 100rpx
+}
+button{
+  font-size: 32rpx
+}
+.buttn{
+  width: 350rpx;
+  font-size: 32rpx;
+  background: #549c98;
+  color: #fff;
+}
+.hhh{
+  background: #96dfdb
+}
+.picker{
+  text-align: center
+}
+/* .picker view:first-child{
+  padding-top: 60rpx
+} */
+.fhword{
+  padding: 60rpx 80rpx
+}
+.changeimg{
+  background: #fff;
+  font-size: 32rpx;
+  border-radius:8rpx;
+  position: absolute;
+  width: 140rpx;
+  text-align: center;
+  line-height: 50rpx;
+  right: 30rpx;
+  bottom: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+.xialaimg{
+  text-align: center;
+  font-size: 32rpx
+}
+/* 弹窗 */
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-title view:first-child{
+  font-size: 32rpx
+}
+.modal-title view:last-child{
+  font-size: 36rpx;
+  font-weight: bold;
+  padding-top: 10rpx
+}
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  justify-content: center;
+  padding: 50rpx 0
+}
+
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 100%;
+  color: #549c98;
+  text-align: center;
+}

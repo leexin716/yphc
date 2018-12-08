@@ -1,0 +1,36 @@
+<!--pages/search/search.wxml-->
+<view class='searcher'>
+  <!-- <view class='search_left' bindtap='goSearch'><image src="../../imgs/car_search.png" style='width:20rpx;height:20rpx'></image> 你想买什么车</view> -->
+  <image src="../../imgs/car_search.png" style='width:20rpx;height:20rpx;'></image>
+  <input placeholder='请输入你要搜索的车' class='search_left' value="{{inputVal}}" maxlength='10' confirm-type="search" bindconfirm='searchFind' bindinput='listenFind' auto-focus></input>
+  <view bindtap='navigateBack'>取消</view>
+</view>
+<view class='history' wx:if="{{isHis}}">
+  <view class='his_title'>
+    <view>历史搜索</view>
+    <view bindtap="clearSearchLog"  bindtap="clearSearchLog">删除</view>
+  </view>
+  <view class='hisList'>
+    <view class='hiscontent' wx:for="{{searchLogList}}" wx:key="index" data-log="{{item}}" bindtap='searchDataByLog'>{{item}}</view>
+  </view>
+</view>
+<!-- 搜索结果列表 -->
+<view class="search-result" wx:if="{{isList}}">
+  <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+    <view class="test-item" wx:for="{{arrData}}" wx:key="index">
+      <navigator url="/pages/cardetails/cardetails?id={{item.id}}" hover-class="none">
+        <view class="car-list">
+            <view style='width:30%'><image src='{{item.imgUrl}}' style='width:220rpx; height:150rpx'></image></view>
+            <view class='car-info'>
+              <view>{{item.brand}} {{item.typeClass}}</view>
+              <view>{{item.name}}</view>
+              <view>指导价 {{item.guidePrice/10000}}万</view>
+              <view>首付:{{item.downPaymentAmount/10000}}万</view>
+              <view>月供{{item.monthlyPaymentAmount}}元</view>
+            </view>
+        </view>
+      </navigator>
+    </view>
+     <view class='nolength' wx:if="{{nolength}}">没有更多数据了</view> 
+  </scroll-view>
+</view>

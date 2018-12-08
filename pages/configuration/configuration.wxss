@@ -1,0 +1,22 @@
+/* pages/configuration/configuration.wxss */
+.sum_title{
+  font-size: 32rpx;
+  color: #666;
+  padding: 30rpx 0;
+  text-align: center
+}
+.content{
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+}
+.contenter{
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #eee
+}
+.contenter view:first-child{
+  color: #666
+}

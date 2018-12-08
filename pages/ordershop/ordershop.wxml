@@ -1,0 +1,71 @@
+<!--pages/ordershop/ordershop.wxml-->
+<view style='height:100%;overflow:hidden'>
+  <!-- 车辆信息 -->
+  <view class='car_info'>
+    <view class='car_img'>
+      <image src="{{shopInfor.imgUrl}}" style='width:280rpx;height:180rpx'></image>
+    </view>
+    <view class='car_word'>
+      <view>{{shopInfor.brand}}</view>
+      <view>{{shopInfor.name}}</view>
+      <view>{{shopInfor.colour}}</view>
+      <view>指导价：{{shopInfor.guidePrice}}万</view>
+    </view>
+  </view>
+  <!-- 预留信息 -->
+  <view class='order_all'>
+    <view class='order_name'>
+      <view class='name_left'>姓名</view>
+      <view class='name_right'>
+        <view class='name_input'><input  maxlength="5" placeholder="请输入到店人姓名" bindinput='bookername' /></view>
+        <view class='name_check'>
+          <radio-group bindchange="radioChange">
+            <label wx:for="{{radiolist}}" wx:key="index">
+              <radio value="{{item.value}}" checked="{{item.checked}}" style='transform:scale(0.8)'/>{{item.name}}
+          </label>
+          </radio-group>
+        </view>
+      </view>
+    </view>
+    <view class='order_phone_one'>
+      <view class='phone_left_one'>手机号</view>
+      <view class='phone_right_one' wx:if="{{isshow}}">{{defalutPhone}}</view> 
+      <view class='phone_right_one' wx:if="{{!isshow}}">
+        <input type='number' maxlength="11" placeholder="请输入手机号码" bindinput='phone'></input>
+      </view>
+    </view>
+    <view class='order_code' wx:if="{{!isshow}}">
+      <view class='code_left'>验证码</view>
+      <view class='code_right'>
+        <view class='code_righter'>
+          <view><input type='number' maxlength="6" placeholder="请输入验证码" bindinput='code'></input></view>
+          <view bindtap='sendCode'>{{timer}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='select'>
+      <view class='select_left'>预约门店</view>
+      <view class='select_right'>
+        <view class='select_righter'>
+          <picker data-shopid="{{sure_address[indexs].id}}" bindchange="bindPickerChange" value="{{index}}" range="{{shopnamelist}}">
+            <view class='choosename'>
+              <view>{{shopnamelist[indexs]}}</view>
+              <view><image src="../../imgs/righttou.png" style='width:20rpx;height:30rpx'></image></view>
+            </view>
+          </picker>
+          <view class='select_address'>{{sure_address[indexs].name}}</view>
+          <view class='store_logo'>
+            <view>优品好车</view>
+            <view>体验店</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 预约按钮 -->
+  <view class='order_btn'><button bindtap='sure_order'>预约</button></view>
+  <view class='use_orther' bindtap='useorder'>
+    <view wx:if="{{isshow}}">使用其他手机号预约</view>
+    <view wx:if="{{!isshow}}">使用默认手机号预约</view>
+  </view>
+</view>

@@ -1,0 +1,82 @@
+<!--pages/mypage/mypage.wxml-->
+<!-- <image src="{{myimg}}" style='width:100%;height:500rpx'></image> -->
+<view class='bannerimg' style='background-image: url({{myimg}})' data-img="{{myimg}}" bindtap='previewImage'></view>
+<view class='contant'>
+  <view class='font3'>我们已经在一起</view>
+  <view class='time'><text>{{days}}</text>天</view>
+  <view class='time'><text>{{seconds}}</text>秒</view>
+  <view class='header'>
+    <view class='font1'>已有{{stars}}位好友为你点赞</view>
+    <view class='font2'>已收集{{stars}}颗爱心</view>
+    <view class='forimgs'>
+      <view wx:for="{{forimgs}}" wx:key="index">
+        <image src='{{item}}' style='width:80rpx;height:80rpx'></image>
+      </view>
+    </view>
+    <view class='lookmore' bindtap='lookmore' wx:if="{{lookmore}}">点击查看更多</view>
+    <view class='lookmore' bindtap='takemore' wx:if="{{takemore}}">收起</view>
+  </view>
+</view>
+<navigator target="miniProgram" open-type="navigate" app-id="wxd105bab77d4c0fc9" path="pages/redirect/redirect?scene=qnvip" extra-data="" version="release"><image src='../../imgs/gif.gif' style='width:100%;height:100rpx' class='adder'></image></navigator>
+<view class='buttner'>
+  <view bindtap='giftTip'>祝福换礼品</view>
+  <view bindtap='rankList'>祝福排行榜</view>
+</view>
+<!-- 排行榜弹窗 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">
+      <view>祝福排行榜</view>
+    </view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <view class='modal-pai'>我的排名：第{{rank}}名</view>
+        <view class='gundong'>
+          <view class='modal-every' wx:for="{{ranklister}}" wx:key="index">
+            <view>{{index+1}}、</view>
+            <!-- <image src="{{item.avator}}" style='width:80rpx;height:80rpx'></image> -->
+            <view style='padding-right:5rpx'>{{item.mobile}}</view>
+            <view>祝福值：{{item.starCount}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">关闭</view>
+    </view>
+</view>
+<!-- 礼品弹窗 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal2}}"></view>
+<view class="modal-dialog1" wx:if="{{showModal2}}">
+    <view class="modal-content">
+      <view class="modal-input">
+        <view class='modal-hotel'>
+          <view>浓情礼</view>
+          <image src="../../imgs/hotel.png" style='width:100%;height:200rpx;padding-top:10rpx'></image>
+        </view>
+        <view class='modal-liwu'>
+          <view class='modal-oner'>
+            <view>幸福礼</view>
+            <image src="../../imgs/xingfu.png" style='width:100%;height:160rpx;padding-top:10rpx'></image>
+          </view>
+          <view class='modal-oner'>
+            <view>祝福礼</view>
+            <image src="../../imgs/zhufuli.png" style='width:100%;height:160rpx;padding-top:10rpx'></image>
+          </view>
+        </view>
+        <view class='rules'>
+          <view>活动时间：8月11日—8月17日</view>
+          <view>活动规则：</view>
+          <view>收集好友的祝福，优品出行将送出1314璀璨好礼。</view>
+          <view>排名第1名  五星级酒店套房一晚。</view>
+          <view>排名第2~4名  七夕情人节花盒。</view>
+          <view>排名第5~19名  电影票两张。</view>
+          <view>兑奖限制：所有礼品将以电子券或邮寄形式送出，仅限在宁波市使用。</view>
+          <view>兑奖说明：中奖的客户，客服将第一时间与您取得联系，为你们送上七夕节祝福。</view>
+        </view>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-confirm" bindtap="onClose" data-status="confirm">关闭</view>
+    </view>
+</view>

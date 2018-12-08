@@ -1,0 +1,30 @@
+<!--pages/giveup/giveup.wxml-->
+<view style='position:relative'>
+  <!-- <image src="{{imgs}}" style='width:100%;height:500rpx'></image> -->
+  <view class='bannerimg' style='background-image: url({{imgs}})' data-img="{{imgs}}" bindtap='previewImage'></view>
+  <view class='dianzan' wx:if="{{isHeart}}">点赞送爱心即可看到图片哦</view>
+  <!-- <view class='dianzan' bindtap='tiper' wx:if="{{isimg}}">
+    <image src='../../imgs/haert.png' style='width:90rpx;height:90rpx'></image>
+    <view>点赞送爱心</view>
+    <view>即可看到图片哦~</view>
+  </view> -->
+</view>
+<view class='contian'>
+  <view style='padding: 110rpx 80rpx 280rpx 80rpx'>
+    <view class='contanter'>
+      <view class='feihua'>{{content}}</view>
+      <view class='feihua'>
+        <view>我们已经在一起</view>
+        <view class='cnetr'><text>{{days}}</text>天</view>
+        <view class='cnetr'><text>{{seconds}}</text>秒</view>
+      </view>
+      <view class='daternum'><view>{{loveMonthDate}}</view><view>{{loveYear}}</view></view>
+    </view>
+  </view>
+</view>
+<navigator target="miniProgram" open-type="navigate" app-id="wxd105bab77d4c0fc9" path="pages/redirect/redirect?scene=qnvip" extra-data="" version="release"><image src='../../imgs/gif.gif' style='width:100%;height:100rpx' class='adder'></image></navigator>
+<!-- <view class='bttn'>我也要参与</view> -->
+<view class='buttner'>
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点赞</button>
+  <view bindtap='gotocanyu'>我也要参与</view>
+</view>

@@ -1,0 +1,105 @@
+/* pages/giveup/giveup.wxss */
+.contian{
+  width: 100%;
+  height: 500rpx;
+  margin-top: 100rpx;
+  background-image: url('http://mp.static.youpinhaoche.com/aixin.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  font-size: 32rpx;
+  /* padding-bottom: 280rpx */
+}
+.bannerimg{
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 500rpx;
+}
+.contanter{
+  border:1px solid #ccc;
+  position: relative
+}
+.feihua{
+  padding: 60rpx 30rpx
+}
+.cnetr{
+  text-align: center;
+  font-size: 32rpx;
+  padding-top: 10rpx
+}
+.cnetr text{
+  font-size: 38rpx;
+  font-weight: bold
+}
+.adder{
+  position: fixed;
+  bottom: 90rpx;
+  width: 100%;
+  height: 110rpx
+}
+.bttn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #ff8989;
+  color: #fff;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 34rpx
+}
+.buttner{
+  height: 90rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  font-size: 36rpx;
+  border-top: 1px solid #eee
+}
+.buttner view:first-child{
+  width: 50%;
+  text-align: center;
+  color: #ff8989
+}
+.buttner view:last-child{
+  width: 50%;
+  text-align: center;
+  background: #ff8989;
+  color: #fff;
+  line-height: 90rpx
+}
+.dianzan{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+  line-height: 60rpx;
+  background: rgba(255, 255, 255, 0.6)
+}
+button{
+  width: 50%;
+  text-align: center;
+  color: #ff8989;
+  line-height: 90rpx;
+  font-size: 36rpx
+}
+.daternum{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: -50rpx;
+  right: -50rpx;
+  color: #333;
+  font-size: 24rpx;
+  background-image: url('http://mp.static.youpinhaoche.com/xiegang.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.daternum view:last-child{
+  float:right;
+  padding:28rpx 5rpx 0 0;
+}

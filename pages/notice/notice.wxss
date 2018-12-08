@@ -1,0 +1,48 @@
+/* pages/notice/notice.wxss */
+.boddy{
+  padding:0 20rpx;
+  background: #fff;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20rpx
+}
+.notice{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding:20rpx 0
+}
+.notice :last-child{
+  border-bottom: none
+}
+.not_left{
+  width: 15%
+}
+.not_right{
+  width: 85%;
+  display: flex;
+  flex-direction: column
+}
+.right_top{
+  display: flex;
+  justify-content: space-between
+}
+.right_top view:first-child{
+  color: #333;
+  font-size: 30rpx
+}
+.right_top :last-child{
+  font-size: 28rpx;
+  color: #666
+}
+.btm_title{
+  font-size: 28rpx;
+  color: #666;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  padding-top: 10rpx
+}

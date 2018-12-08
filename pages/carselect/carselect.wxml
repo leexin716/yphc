@@ -1,0 +1,91 @@
+<!--pages/carselect/carselect.wxml-->
+<wxs module="getPri" src="../../filter/price.wxs"></wxs>
+<view class='searcher'>
+  <view style='width:80%'>
+    <!-- <navigator url="{{isLogin?'/pages/search/search':'/pages/login/login'}}"> -->
+    <!-- <navigator url="/pages/search/search"> -->
+      <view class='search_left' data-islogin="0" bindtap='search_login'>
+        <image src="../../imgs/car_search.png" style='width:20rpx;height:20rpx'></image> 你想买什么车
+      </view>
+    <!-- </navigator> -->
+  </view>
+  <!-- <navigator url="{{isLogin?'/pages/notice/notice':'/pages/login/login'}}"> -->
+    <image src='../../imgs/icon_message.png' style='width:40rpx;height:40rpx;margin-top:10rpx' data-islogin="1" bindtap='mess_login'></image>
+  <!-- </navigator> -->
+</view>
+<view class="container-filter">
+  <view class="filter-flex">
+    <view class="filter-tab">
+      <view bindtap="setFilterPanel" data-findex="1" class="filter-tab-item {{showfilterindex==1?'active':''}}">
+        <view>{{defaulttitle}}</view>
+        <image src="../../imgs/down.png" style='width:30rpx;height:20rpx'></image>
+      </view>
+      <view bindtap="setFilterPanel" data-findex="2" class="filter-tab-item {{showfilterindex==2?'active':''}}">
+        <view>{{brandtitle}}</view>
+        <image src="../../imgs/down.png" style='width:30rpx;height:20rpx'></image>
+      </view>
+      <view bindtap="setFilterPanel" data-findex="3" class="filter-tab-item {{showfilterindex==3?'active':''}}">
+        <view>{{firstpaytitle}}</view>
+        <image src="../../imgs/down.png" style='width:30rpx;height:20rpx'></image>
+      </view>
+      <view bindtap="setFilterPanel" data-findex="4" class="filter-tab-item {{showfilterindex==4?'active':''}}">
+        <view>{{monthpaytitle}}</view>
+        <image src="../../imgs/down.png" style='width:30rpx;height:20rpx'></image>
+      </view>
+    </view>
+    <view class="filter-content" wx:if="{{showfilter}}">
+      <!--第一个-->
+      <view class="filter-panel" wx:if="{{showfilterindex==1}}">
+        <view class="filter-panel-left">
+          <view wx:for="{{filterdata.default}}" wx:key="{{item.id}}" bindtap="setDefaultIndex" data-defaultindex="{{index}}" data-defaultid="{{item.id}}" 
+          class="{{defaultindex==index?'active':''}}">{{item.name}}</view>
+        </view>
+      </view>
+      <!--第二个-->
+      <view class="filter-panel" wx:if="{{showfilterindex==2}}">
+        <view class="filter-panel-left">
+          <view wx:for="{{brandData}}" wx:key="{{item.id}}" bindtap="setBrandIndex" data-brandindex="{{index}}" data-brandid="{{item.id}}"
+           class="{{brandindex==index?'active':''}}">{{item.chineseName}}</view>
+        </view>
+      </view>
+      <!--第三个-->
+      <view class="filter-panel" wx:if="{{showfilterindex==3}}">
+        <view class="filter-panel-left">
+          <view wx:for="{{filterdata.firstPay}}" wx:key="{{item.id}}" bindtap="setFirstPayIndex" data-firstPayindex="{{index}}" data-firstPayid="{{item.id}}" 
+          class="{{firstpayindex==index?'active':''}}">{{item.name}}</view>
+        </view>
+      </view>
+      <!--第四个-->
+      <view class="filter-panel" wx:if="{{showfilterindex==4}}">
+        <view class="filter-panel-left">
+          <view wx:for="{{filterdata.monthPay}}" wx:key="{{item.id}}" bindtap="setMonthPayIndex" data-monthPayindex="{{index}}" data-monthPayid="{{item.id}}"
+           class="{{monthpayindex==index?'active':''}}">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="filter-shadow" wx:if="{{showfilter}}" bindtap="hideFilter"></view>
+  </view>
+  <scroll-view scroll-y="true" style="height:{{scrollHeight}}px" class="container-body"  bindscrolltolower="scrollLoading">
+    <view>
+      <view class="test-item" wx:for="{{arrData}}" wx:key="{{item.id}}">
+        <!-- <navigator url="{{isLogin?('/pages/cardetails/cardetails?id='+item.id):('/pages/login/login')}}" hover-class="none"> -->
+        <!-- <navigator url="/pages/cardetails/cardetails?id={{item.id}}" hover-class="none"> -->
+          <view class="car-list" data-islogin="2" data-id="{{item.id}}" bindtap='carlist_login'>
+              <view style='width:30%;position: relative'>
+                <image src="{{item.imgTagList[0]}}" style="width:90rpx;height:30rpx;position: absolute"></image>
+                <image src='{{item.imgUrl}}' style='width:220rpx; height:150rpx'></image>
+              </view>
+              <view class='car-info'>
+                <view>{{item.brand}} {{item.typeClass}}</view>
+                <view>{{item.name}}</view>
+                <view>指导价 {{getPri.getPrice(item.guidePrice)}}万</view>
+                <view>首付:{{getPri.getPrice(item.downPaymentAmount)}}万</view>
+                <view>月供{{item.monthlyPaymentAmount}}元</view>
+              </view>
+          </view>
+        <!-- </navigator> -->
+      </view>
+    </view>
+    <view wx:if="{{isMoreContent}}" style='text-align:center;padding:10rpx 0'>没有更多内容了</view>
+  </scroll-view>
+</view>

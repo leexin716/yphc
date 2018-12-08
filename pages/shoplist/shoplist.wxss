@@ -1,0 +1,23 @@
+/* pages/shoplist/shoplist.wxss */
+.allshop{
+  display: flex;
+  flex-direction: column
+}
+.shop_item{
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  background: #fff;
+  padding: 30rpx;
+  border-bottom: 1px solid #eee
+}
+.shop_item :last-child{
+  border:none
+}
+.item_left{
+  width: 90%
+}
+.item_left view:nth-child(2){
+  color: #666;
+  margin: 10rpx 0
+}

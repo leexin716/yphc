@@ -1,0 +1,67 @@
+/* pages/myappoint/myappoint.wxss */
+page{
+  background: #f6f6f6;
+}
+.content{
+  margin: 20rpx 0;
+  background: #fff;
+  font-size: 28rpx
+}
+.cnt_btm{
+  padding:20rpx 30rpx 0 30rpx
+}
+.cnt_top{
+  display: flex;
+  align-items: center;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee
+}
+.cnt_top view:first-child{
+  width: 40%
+}
+.cnt_up{
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  color: #666
+}
+.shblock{
+  width:121rpx;
+  line-height:40rpx;
+  font-size: 24rpx;
+  border-radius:6rpx;
+  color:#fff;
+  background:#549c98;
+  text-align:center;
+}
+.up_left{
+  width: 82%
+}
+.up_left view:first-child{
+  padding-bottom: 10rpx
+}
+.up_right{
+  width: 18%
+}
+.up_right view:first-child{
+  padding-bottom: 10rpx
+}
+.nodata{
+  text-align: center;
+  padding-top:300rpx
+}
+.nocarFav{
+  color: #666;
+  font-size: 30rpx;
+  padding: 25rpx 0
+}
+.goshoper{
+  width:280rpx;
+  line-height:60rpx;
+  text-align:center;
+  color:#fff;
+  background:#FF5500;
+  font-size:30rpx;
+  border-radius:5px;
+  margin:auto;
+}

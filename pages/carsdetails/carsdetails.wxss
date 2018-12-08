@@ -1,0 +1,339 @@
+page {
+  background: #f6f6f6;
+}
+
+.swiperClass {
+  margin: 0;
+}
+.swiper{
+  width: 100%;
+  position: relative;
+}
+.dots{
+  position: absolute;
+  bottom: 10rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  padding: 0 40rpx;
+  color: #bebebe;
+}
+image.active {
+  transform: none;
+  transition: all 0.2s ease-in 0s;
+}
+
+image.quiet {
+  transform: scale(0.8333333);
+  transition: all 0.2s ease-in 0s;
+}
+
+.carTitle {
+  display: flex;
+  padding: 40rpx;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.carTitle_left {
+  width: 70%;
+}
+
+.carTitle_left view:first-child {
+  font-size: 40rpx;
+  color: #549c98;
+  font-weight: bold;
+  padding-bottom: 20rpx;
+}
+
+.carTitle_left view {
+  font-size: 32rpx;
+  color: #666;
+}
+.carTitle_left text{
+  text-decoration: line-through
+}
+
+.carTitle_right {
+  text-align: center;
+  font-size: 28rpx;
+  color: #549c98;
+}
+
+.planer {
+  font-size: 32rpx;
+  color: #999;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.planer view {
+  padding: 20rpx 10rpx;
+  font-weight: bold;
+}
+
+.activer {
+  color: #549c98;
+  border-bottom: 2px solid #549c98;
+}
+
+.rentContent {
+  background: #fff;
+  padding-bottom: 40rpx;
+}
+
+.rentCar {
+  padding: 40rpx 40rpx 0 40rpx;
+}
+
+.rentCar_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rentCar_top_left {
+  font-size: 28rpx;
+  color: #549c98;
+}
+
+.rentCar_top_left text {
+  width: 4px;
+  height: 10px;
+  border-radius: 3px;
+  background: #549c98;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+
+.rentCar_top_right {
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+
+.rentCar_btm {
+  background: #d0f7f2;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 40rpx;
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+}
+
+.rentCar_btm view {
+  text-align: center;
+}
+
+.rentCar_btm_top {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.rentCar_btm_btm {
+  font-size: 28rpx;
+  color: #549c98;
+  padding-top: 10rpx;
+  font-weight: bold;
+}
+
+.buyCar {
+  background: #fff;
+  padding-bottom: 40rpx;
+}
+
+.buyCarContent {
+  background: #d0f7f2;
+  padding: 15rpx 40rpx;
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+}
+
+.buyCar_btm {
+  display: flex;
+  justify-content: space-around;
+  padding: 15rpx 0;
+}
+
+.buyCar_btm view {
+  text-align: center;
+}
+
+.buyCar_btm:first-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.testCarContent {
+  background: #fff;
+  padding: 60rpx;
+}
+
+.testCarTitle {
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.testCarProcess {
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50rpx;
+}
+
+.testCarProcess view {
+  text-align: center;
+}
+
+.nearContent {
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 0 40rpx;
+  text-align: center;
+}
+
+.nearTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  padding: 40rpx 0;
+}
+
+.nearTitle text {
+  display: inline-block;
+  width: 60rpx;
+  height: 1px;
+  background: #ccc;
+  margin: 0 30rpx;
+}
+
+.nearName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nearName view:first-child {
+  color: #549c98;
+  font-size: 40rpx;
+}
+
+.nearName view:last-child {
+  font-size: 24rpx;
+  color: #fff;
+  background: #549c98;
+  padding: 8rpx 16rpx;
+  border-radius: 10rpx;
+}
+
+.nearAddress {
+  font-size: 28rpx;
+  color: #666;
+  padding: 20rpx 0;
+  text-align: left;
+}
+
+.naerContant {
+  display: flex;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.naerContant view {
+  margin-right: 30rpx;
+}
+
+.naerAllShop {
+  color: #549c98;
+  font-size: 32rpx;
+  padding: 8rpx 30rpx;
+  background: #fff;
+  border: 1px solid #549c98;
+  border-radius: 30rpx;
+  display: inline-block;
+  margin: 40rpx 0;
+}
+
+.configureLight {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.configureLight view {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.carLiftContent{
+  background:#fff;
+  margin-top:20rpx;
+  padding:0 40rpx;
+  padding-bottom: 130rpx
+}
+.carLift{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.carLift view:first-child{
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.carLift view:last-child{
+  font-size: 24rpx
+}
+.carStep{
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+}
+.carStepRight{
+  width: 87%;
+}
+.carStepRight view:first-child{
+  color: #549c98
+}
+.carbtn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  height: 110rpx;
+  align-items: center;
+  background: #fff;
+}
+.carbtnLeft{
+  width: 20%;
+  border-top:1px solid #eee;
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  justify-content:center;
+  font-size:28rpx;
+  height: 110rpx;
+  text-align: center
+}
+.carbtnRight{
+  background: #549c98;
+  text-align: center;
+  line-height: 110rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+button{
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  line-height: 20px;
+}
+button::after {
+  border: none;
+}
